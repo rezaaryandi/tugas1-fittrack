@@ -1,6 +1,5 @@
-/**
- * Merepresentasikan data member pada sistem FitTrack.
- */
+package src;
+
 public class Member {
     // Konstanta aturan validasi (menghindari magic number)
     private static final int MIN_PANJANG_NO_TELP = 10;
