@@ -3,6 +3,11 @@ public class Member {
     private static final int MIN_PANJANG_NO_TELP = 10;
     private static final String AWALAN_NO_TELP = "0";
 
+    // Jenis paket yang diperbolehkan
+    public static final String PAKET_BASIC = "Basic";
+    public static final String PAKET_PREMIUM = "Premium";
+    public static final String PAKET_VIP = "VIP";
+
     // Atribut privat untuk enkapsulasi data member
     private String nama;
     private String noTelepon;
