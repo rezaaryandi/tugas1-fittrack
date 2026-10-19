@@ -29,4 +29,19 @@ public class Member {
     public String getJenisPaket() {
         return jenisPaket;
     }
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public void setNoTelepon(String noTelepon) {
+        this.noTelepon = noTelepon;
+    }
+
+    public void setTanggalDaftar(String tanggalDaftar) {
+        this.tanggalDaftar = tanggalDaftar;
+    }
+
+    public void setJenisPaket(String jenisPaket) {
+        this.jenisPaket = jenisPaket;
+    }
 }
