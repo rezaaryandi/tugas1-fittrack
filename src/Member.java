@@ -30,7 +30,11 @@ public class Member {
         return jenisPaket;
     }
     public void setNama(String nama) {
-        this.nama = nama;
+        if (nama == null || nama.trim().isEmpty()) {
+            System.out.println("[DITOLAK] Nama tidak boleh kosong atau hanya berisi spasi");
+            return;
+        }
+        this.nama = nama.trim();
     }
 
     public void setNoTelepon(String noTelepon) {
