@@ -49,7 +49,11 @@ public class Member {
     }
 
     public void setTanggalDaftar(String tanggalDaftar) {
-        this.tanggalDaftar = tanggalDaftar;
+        if (tanggalDaftar == null || tanggalDaftar.trim().isEmpty()) {
+            System.out.println("[DITOLAK] Tanggal daftar tidak boleh kosong");
+            return;
+        }
+        this.tanggalDaftar = tanggalDaftar.trim();
     }
 
     public void setJenisPaket(String jenisPaket) {
