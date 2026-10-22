@@ -59,4 +59,13 @@ public class Member {
     public void setJenisPaket(String jenisPaket) {
         this.jenisPaket = jenisPaket;
     }
+
+    private static boolean isSemuaAngka(String teks) {
+        for (int i = 0; i < teks.length(); i++) {
+            if (!Character.isDigit(teks.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
