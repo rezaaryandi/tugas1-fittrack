@@ -38,11 +38,9 @@ public class Member {
     }
 
     public void setNoTelepon(String noTelepon) {
-        if (noTelepon == null
-                || !noTelepon.startsWith(AWALAN_NO_TELP)
-                || noTelepon.length() < MIN_PANJANG_NO_TELP) {
-            System.out.println("[DITOLAK] Nomor telepon harus diawali angka " + AWALAN_NO_TELP
-                    + " dan minimal " + MIN_PANJANG_NO_TELP + " digit");
+        if (!isNoTeleponValid(noTelepon)) {
+            System.out.println("[DITOLAK] Nomor telepon harus berupa angka, diawali angka "
+                    + AWALAN_NO_TELP + ", dan minimal " + MIN_PANJANG_NO_TELP + " digit");
             return;
         }
         this.noTelepon = noTelepon;
