@@ -75,4 +75,10 @@ public class Member {
                 && noTelepon.length() >= MIN_PANJANG_NO_TELP
                 && isSemuaAngka(noTelepon);
     }
+
+    private static boolean isJenisPaketValid(String jenisPaket) {
+        return PAKET_BASIC.equals(jenisPaket)
+                || PAKET_PREMIUM.equals(jenisPaket)
+                || PAKET_VIP.equals(jenisPaket);
+    }
 }
