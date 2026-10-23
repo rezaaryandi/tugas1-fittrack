@@ -68,4 +68,11 @@ public class Member {
         }
         return true;
     }
+
+    private static boolean isNoTeleponValid(String noTelepon) {
+        return noTelepon != null
+                && noTelepon.startsWith(AWALAN_NO_TELP)
+                && noTelepon.length() >= MIN_PANJANG_NO_TELP
+                && isSemuaAngka(noTelepon);
+    }
 }
