@@ -55,6 +55,11 @@ public class Member {
     }
 
     public void setJenisPaket(String jenisPaket) {
+        if (!isJenisPaketValid(jenisPaket)) {
+            System.out.println("[DITOLAK] Jenis paket harus " + PAKET_BASIC + ", " + PAKET_PREMIUM
+                    + ", atau " + PAKET_VIP + " (penulisan persis)");
+            return;
+        }
         this.jenisPaket = jenisPaket;
     }
 
