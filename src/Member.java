@@ -8,11 +8,14 @@ public class Member {
     public static final String PAKET_PREMIUM = "Premium";
     public static final String PAKET_VIP = "VIP";
 
+      // Nilai default untuk data teks yang belum diisi atau tidak valid
+    private static final String NILAI_DEFAULT_TEKS = "Belum diisi";
+
     // Atribut privat untuk enkapsulasi data member
-    private String nama;
-    private String noTelepon;
-    private String tanggalDaftar;
-    private String jenisPaket;
+    private String nama = NILAI_DEFAULT_TEKS;
+    private String noTelepon = NILAI_DEFAULT_TEKS;
+    private String tanggalDaftar = NILAI_DEFAULT_TEKS;
+    private String jenisPaket = PAKET_BASIC;
 
     public String getNama() {
         return nama;
