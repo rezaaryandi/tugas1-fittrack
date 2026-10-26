@@ -17,6 +17,13 @@ public class Member {
     private String tanggalDaftar = NILAI_DEFAULT_TEKS;
     private String jenisPaket = PAKET_BASIC;
 
+    public Member(String nama, String noTelepon, String tanggalDaftar, String jenisPaket) {
+        setNama(nama);
+        setNoTelepon(noTelepon);
+        setTanggalDaftar(tanggalDaftar);
+        setJenisPaket(jenisPaket);
+    }
+
     public String getNama() {
         return nama;
     }
