@@ -77,6 +77,14 @@ public class Member {
         this.jenisPaket = jenisPaket;
     }
 
+    @Override
+    public String toString() {
+        return "Nama: " + nama
+                + " | No. Telepon: " + noTelepon
+                + " | Tanggal Daftar: " + tanggalDaftar
+                + " | Jenis Paket: " + jenisPaket;
+    }
+
     private static boolean isSemuaAngka(String teks) {
         for (int i = 0; i < teks.length(); i++) {
             if (!Character.isDigit(teks.charAt(i))) {
