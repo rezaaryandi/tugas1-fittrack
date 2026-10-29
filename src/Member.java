@@ -45,7 +45,7 @@ public class Member {
     }
     public void setNama(String nama) {
         if (nama == null || nama.trim().isEmpty()) {
-            System.out.println("[DITOLAK] Nama tidak boleh kosong atau hanya berisi spasi");
+            cetakPenolakan("Nama tidak boleh kosong atau hanya berisi spasi");
             return;
         }
         this.nama = nama.trim();
@@ -53,7 +53,7 @@ public class Member {
 
     public void setNoTelepon(String noTelepon) {
         if (!isNoTeleponValid(noTelepon)) {
-            System.out.println("[DITOLAK] Nomor telepon harus berupa angka, diawali angka "
+            cetakPenolakan("Nomor telepon harus berupa angka, diawali angka "
                     + AWALAN_NO_TELP + ", dan minimal " + MIN_PANJANG_NO_TELP + " digit");
             return;
         }
@@ -62,7 +62,7 @@ public class Member {
 
     public void setTanggalDaftar(String tanggalDaftar) {
         if (tanggalDaftar == null || tanggalDaftar.trim().isEmpty()) {
-            System.out.println("[DITOLAK] Tanggal daftar tidak boleh kosong");
+            cetakPenolakan("Tanggal daftar tidak boleh kosong");
             return;
         }
         this.tanggalDaftar = tanggalDaftar.trim();
@@ -70,7 +70,7 @@ public class Member {
 
     public void setJenisPaket(String jenisPaket) {
         if (!isJenisPaketValid(jenisPaket)) {
-            System.out.println("[DITOLAK] Jenis paket harus " + PAKET_BASIC + ", " + PAKET_PREMIUM
+            cetakPenolakan("Jenis paket harus " + PAKET_BASIC + ", " + PAKET_PREMIUM
                     + ", atau " + PAKET_VIP + " (penulisan persis)");
             return;
         }
@@ -105,5 +105,9 @@ public class Member {
         return PAKET_BASIC.equals(jenisPaket)
                 || PAKET_PREMIUM.equals(jenisPaket)
                 || PAKET_VIP.equals(jenisPaket);
+    }
+    
+    private static void cetakPenolakan(String alasan) {
+        System.out.println("[DITOLAK] " + alasan);
     }
 }
