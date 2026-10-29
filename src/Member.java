@@ -71,10 +71,20 @@ public class Member {
         return noTelepon;
     }
     
+    /**
+     * Mengambil tanggal pendaftaran member.
+     *
+     * @return tanggal pertama kali member mendaftar
+     */
     public String getTanggalDaftar() {
         return tanggalDaftar;
     }
 
+    /**
+     * Mengambil jenis paket keanggotaan member.
+     *
+     * @return jenis paket: Basic, Premium, atau VIP
+     */
     public String getJenisPaket() {
         return jenisPaket;
     }
@@ -110,6 +120,13 @@ public class Member {
         this.noTelepon = noTelepon;
     }
 
+     /**
+     * Mengubah tanggal pendaftaran setelah melalui validasi. Format tanggal
+     * bebas, tetapi tidak boleh kosong. Jika tidak valid, tanggal lama
+     * dipertahankan dan pesan penolakan dicetak.
+     *
+     * @param tanggalDaftar tanggal pendaftaran baru, tidak boleh kosong
+     */
     public void setTanggalDaftar(String tanggalDaftar) {
         if (tanggalDaftar == null || tanggalDaftar.trim().isEmpty()) {
             cetakPenolakan("Tanggal daftar tidak boleh kosong");
@@ -118,6 +135,13 @@ public class Member {
         this.tanggalDaftar = tanggalDaftar.trim();
     }
 
+    /**
+     * Mengubah jenis paket setelah melalui validasi. Hanya Basic, Premium,
+     * dan VIP (penulisan persis) yang diterima. Jika tidak valid, paket lama
+     * dipertahankan dan pesan penolakan dicetak.
+     *
+     * @param jenisPaket jenis paket baru: Basic, Premium, atau VIP
+     */
     public void setJenisPaket(String jenisPaket) {
         if (!isJenisPaketValid(jenisPaket)) {
             cetakPenolakan("Jenis paket harus " + PAKET_BASIC + ", " + PAKET_PREMIUM
@@ -127,6 +151,11 @@ public class Member {
         this.jenisPaket = jenisPaket;
     }
 
+    /**
+     * Menghasilkan representasi teks member yang rapi dan berlabel.
+     *
+     * @return teks berisi nama, nomor telepon, tanggal daftar, dan jenis paket
+     */
     @Override
     public String toString() {
         return "Nama: " + nama
