@@ -53,14 +53,24 @@ public class Member {
         this(nama, noTelepon, tanggalDaftar, PAKET_BASIC);
     }
 
+    /**
+     * Mengambil nama member.
+     *
+     * @return nama lengkap member
+     */
     public String getNama() {
         return nama;
     }
 
+    /**
+     * Mengambil nomor telepon member.
+     *
+     * @return nomor telepon member
+     */
     public String getNoTelepon() {
         return noTelepon;
     }
-
+    
     public String getTanggalDaftar() {
         return tanggalDaftar;
     }
@@ -68,6 +78,13 @@ public class Member {
     public String getJenisPaket() {
         return jenisPaket;
     }
+
+     /**
+     * Mengubah nama member setelah melalui validasi. Jika nama kosong atau
+     * hanya berisi spasi, nama lama dipertahankan dan pesan penolakan dicetak.
+     *
+     * @param nama nama baru, tidak boleh kosong atau hanya berisi spasi
+     */
     public void setNama(String nama) {
         if (nama == null || nama.trim().isEmpty()) {
             cetakPenolakan("Nama tidak boleh kosong atau hanya berisi spasi");
@@ -76,6 +93,14 @@ public class Member {
         this.nama = nama.trim();
     }
 
+    /**
+     * Mengubah nomor telepon member setelah melalui validasi format.
+     * Jika format tidak valid, nomor lama dipertahankan dan pesan
+     * penolakan dicetak.
+     *
+     * @param noTelepon nomor telepon baru, wajib berupa angka, diawali angka 0
+     *                  dan memiliki panjang minimal 10 digit
+     */
     public void setNoTelepon(String noTelepon) {
         if (!isNoTeleponValid(noTelepon)) {
             cetakPenolakan("Nomor telepon harus berupa angka, diawali angka "
