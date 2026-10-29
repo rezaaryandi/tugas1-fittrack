@@ -1,3 +1,9 @@
+/**
+ * Merepresentasikan satu member yang terdaftar di gym FitTrack.
+ * Class ini menyimpan data pribadi member dan memastikan setiap
+ * perubahan data lolos validasi sebelum disimpan.
+ */
+
 public class Member {
     // Konstanta aturan validasi (menghindari magic number)
     private static final int MIN_PANJANG_NO_TELP = 10;
@@ -17,12 +23,31 @@ public class Member {
     private String tanggalDaftar = NILAI_DEFAULT_TEKS;
     private String jenisPaket = PAKET_BASIC;
 
+    /**
+     * Membuat member baru dengan data lengkap. Setiap nilai diisi lewat
+     * setter sehingga data yang tidak valid ditolak dan atributnya tetap
+     * memakai nilai default yang aman.
+     *
+     * @param nama          nama lengkap member, tidak boleh kosong
+     * @param noTelepon     nomor telepon, diawali angka 0 dan minimal 10 digit
+     * @param tanggalDaftar tanggal pertama kali mendaftar, tidak boleh kosong
+     * @param jenisPaket    jenis paket: Basic, Premium, atau VIP
+     */
+
     public Member(String nama, String noTelepon, String tanggalDaftar, String jenisPaket) {
         setNama(nama);
         setNoTelepon(noTelepon);
         setTanggalDaftar(tanggalDaftar);
         setJenisPaket(jenisPaket);
     }
+
+    /**
+     * Membuat member baru tanpa menentukan paket. Paket otomatis diisi Basic.
+     *
+     * @param nama          nama lengkap member, tidak boleh kosong
+     * @param noTelepon     nomor telepon, diawali angka 0 dan minimal 10 digit
+     * @param tanggalDaftar tanggal pertama kali mendaftar, tidak boleh kosong
+     */
 
     public Member(String nama, String noTelepon, String tanggalDaftar) {
         this(nama, noTelepon, tanggalDaftar, PAKET_BASIC);
