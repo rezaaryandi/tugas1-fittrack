@@ -14,6 +14,11 @@ public class TesFitTrack {
         System.out.println("Nomor telepon sebelum diubah : " + contoh.getNoTelepon());
         contoh.setNoTelepon("12345");
         System.out.println("Nomor telepon setelah diubah : " + contoh.getNoTelepon());
+
+        cetakJudul("3. Daftar seluruh member");
+        for (int i = 0; i < daftarMember.length; i++) {
+            System.out.println((i + 1) + ". " + daftarMember[i]);
+        }
     }
 
     private static void cetakJudul(String judul) {
