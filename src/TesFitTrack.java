@@ -1,4 +1,14 @@
+/**
+ * Program uji untuk class Member. Membuat beberapa member, membuktikan
+ * bahwa validasi menolak data salah, lalu mencetak seluruh member.
+ */
 public class TesFitTrack {
+    
+    /**
+     * Titik masuk program uji FitTrack.
+     *
+     * @param args argumen command line (tidak dipakai)
+     */
     public static void main(String[] args) {
         cetakJudul("1. Membuat objek Member (termasuk satu data tidak valid)");
         Member[] daftarMember = {
